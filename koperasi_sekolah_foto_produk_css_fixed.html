@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperasi Sekolah - SMK Muthia Harapan Cicalengka</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font Inter / Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#1e6b37',
+                            greenDark: '#144c26',
+                            greenLight: '#288c4a',
+                            yellow: '#f59e0b',
+                            accent: '#ecfdf5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e6b37 0%, #144c26 60%, #0f381c 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printableReceipt, #printableReceipt * {
+                visibility: visible;
+            }
+            #printableReceipt {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                <!-- Logo & Brand SMK Muthia Harapan -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                        <!-- SVG Rendering Logo SMK Muthia Harapan Cicalengka Bandung -->
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-sm">
+                            <!-- Outer Yellow Flower Shape -->
+                            <path d="M100 10 C 120 10, 130 25, 145 20 C 160 15, 170 30, 180 40 C 190 50, 180 70, 190 85 C 200 100, 185 115, 190 130 C 195 145, 175 160, 170 175 C 165 190, 140 185, 130 195 C 120 205, 100 190, 100 190 C 100 190, 80 205, 70 195 C 60 185, 35 190, 30 175 C 25 160, 5 145, 10 130 C 15 115, 0 100, 10 85 C 20 70, 10 50, 20 40 C 30 30, 40 15, 55 20 C 70 25, 80 10, 100 10 Z" fill="#FACC15" stroke="#1E293B" stroke-width="4"/>
+
+                            <!-- Circular Text Path Ring -->
+                            <circle cx="100" cy="100" r="72" fill="#FEF08A" stroke="#1E293B" stroke-width="2"/>
+
+                            <!-- Inner Content Area -->
+                            <circle cx="100" cy="100" r="54" fill="#E0F2FE" stroke="#1E293B" stroke-width="2"/>
+                            <!-- Black Gear (Left Side) -->
+                            <g fill="#1E293B">
+                                <path d="M 100,100 L 100,46 A 54,54 0 0,0 100,154 Z"/>
+                                <!-- Gear Teeth -->
+                                <rect x="42" y="94" width="12" height="12" rx="2"/>
+                                <rect x="48" y="70" width="12" height="12" rx="2" transform="rotate(30 54 76)"/>
+                                <rect x="64" y="52" width="12" height="12" rx="2" transform="rotate(60 70 58)"/>
+                                <rect x="48" y="118" width="12" height="12" rx="2" transform="rotate(-30 54 124)"/>
+                                <rect x="64" y="136" width="12" height="12" rx="2" transform="rotate(-60 70 142)"/>
+                            </g>
+
+                            <!-- Globe Grid Lines (Right Side) -->
+                            <path d="M 100,46 A 54,54 0 0,1 100,154" fill="none" stroke="#60A5FA" stroke-width="2"/>
+                            <path d="M 100,65 Q 135,75 145,100 Q 135,125 100,135" fill="none" stroke="#93C5FD" stroke-width="2"/>
+                            <path d="M 100,80 Q 145,85 154,100 Q 145,115 100,120" fill="none" stroke="#93C5FD" stroke-width="2"/>
+                            <!-- Torch / Pen Emblem Center -->
+                            <g transform="translate(100, 100) scale(0.85)">
+                                <!-- Wings -->
+                                <path d="M -25,-5 C -20,-25 -5,-35 0,-15 C 5,-35 20,-25 25,-5 C 15,15 0,25 0,25 C 0,25 -15,15 -25,-5 Z" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+                                <!-- Pen Tip / Base -->
+                                <path d="M -6,5 L 0,35 L 6,5 Z" fill="#1E293B"/>
+                                <!-- Flame -->
+                                <path d="M 0,-18 C -6,-28 0,-38 0,-38 C 0,-38 6,-28 0,-18 Z" fill="#EF4444"/>
+                            </g>
+                            <!-- Circular Text Overlay -->
+                            <path id="textArcTop" d="M 32,100 A 68,68 0 0,1 168,100" fill="none"/>
+                            <path id="textArcBottom" d="M 168,100 A 68,68 0 0,1 32,100" fill="none"/>
+                            <text font-size="9.5" font-weight="900" fill="#1E293B" font-family="sans-serif">
+                                <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+                                    SMK MUTHIA HARAPAN
+                                </textPath>
+                            </text>
+                            <text font-size="8.5" font-weight="800" fill="#1E293B" font-family="sans-serif">
+                                <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+                                    CICALENGKA - BANDUNG
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 leading-none">KOPERASI SEKOLAH</h1>
+                        <p class="text-xs font-semibold text-brand-green mt-1">SMK Muthia Harapan Cicalengka</p>
+                    </div>
+                </div>
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-8 font-semibold text-slate-700">
+                    <button onclick="navigateTo('home')" id="nav-home" class="transition-colors hover:text-brand-green py-2 border-b-2 border-brand-green text-brand-green">Beranda</button>
+                    <button onclick="navigateTo('catalog')" id="nav-catalog" class="transition-colors hover:text-brand-green py-2 border-b-2 border-transparent">
+                        Katalog Produk
+                    </button>
+                    <button onclick="scrollToContact()" class="transition-colors hover:text-brand-green py-2 border-b-2 border-transparent">Hubungi Kami</button>
+                </nav>
+                <!-- Search & Actions -->
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <!-- Live Search Bar -->
+                    <div class="relative hidden sm:block w-44 md:w-60">
+                        <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Cari seragam & atribut..." class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-9 py-2 text-xs focus:outline-none focus:border-brand-green focus:bg-white transition-all">
+                        <button class="absolute right-1 top-1 bottom-1 px-2.5 bg-brand-green text-white rounded-md hover:bg-brand-greenDark transition-colors flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                        </button>
+                    </div>
+                    <!-- Cart Icon Button -->
+                    <button onclick="toggleCartModal()" class="relative p-2 text-slate-700 hover:text-brand-green transition-colors">
+                        <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white hidden">0</span>
+                    </button>
+                    <!-- User Account / Login Button -->
+                    <button onclick="openLoginModal()" id="nav-login" class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm border border-brand-green text-brand-green hover:bg-brand-green hover:text-white transition-all">
+                        <i class="fa-regular fa-user"></i>
+                        <span id="loginText" class="hidden sm:inline">Masuk Siswa</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN CONTAINER FOR DYNAMIC VIEWS -->
+    <main class="flex-grow">
+        <!-- HOME PAGE VIEW -->
+        <section id="page-home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+            <!-- Hero Banner -->
+            <div class="relative rounded-2xl overflow-hidden hero-gradient text-white shadow-xl min-h-[320px] md:min-h-[360px] flex items-center">
+                <div class="grid md:grid-cols-12 w-full h-full items-center p-6 sm:p-10 z-10 gap-6">
+                    <!-- Banner Left Content -->
+                    <div class="md:col-span-7 space-y-4">
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold text-yellow-300 border border-white/20">
+                            Toko Resmi SMK Muthia Harapan Cicalengka
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight drop-shadow-sm">
+                            Seragam & Atribut <br>
+                            <span class="text-yellow-400">Lengkap & Berkualitas</span>
+                        </h2>
+                        <p class="text-emerald-100 text-sm sm:text-base max-w-xl font-medium">
+                            Solusi praktis pemenuhan seragam sekolah, pakaian praktik jurusan, batik, hingga aksesoris siswa SMK Muthia Harapan Cicalengka.
+                        </p>
+                        <!-- Feature Badges -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold">
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                                <i class="fa-solid fa-shield-check text-yellow-400"></i>
+                                <span>100% Standar Sekolah</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                                <i class="fa-solid fa-tags text-yellow-400"></i>
+                                <span>Harga Terjangkau</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                                <i class="fa-solid fa-store text-yellow-400"></i>
+                                <span>Ambil Langsung di Koperasi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Banner Right Decorative / Interactive Quick Action -->
+                    <div class="md:col-span-5 relative flex justify-center items-center">
+                        <div class="w-full max-w-sm h-64 sm:h-72 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex flex-col items-center justify-center p-6 text-center shadow-inner">
+                            <div class="w-20 h-20 rounded-full bg-yellow-400 text-brand-green flex items-center justify-center text-3xl mb-3 shadow-lg border-4 border-white/30">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <p class="font-extrabold text-lg text-white">Kebutuhan Siswa Lengkap</p>
+                            <p class="text-xs text-emerald-100 mt-1">SMK Muthia Harapan Cicalengka</p>
+                            <button onclick="navigateTo('catalog')" class="mt-5 px-6 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded-xl font-extrabold text-xs transition-colors shadow-lg flex items-center gap-2">
+                                <span>Lihat Semua Katalog</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Layout: Sidebar + Featured Products Grid -->
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Sidebar -->
+
+                <aside class="space-y-6">
+
+                    <!-- Kategori Box -->
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+
+                        <div class="bg-brand-green text-white px-5 py-3 font-bold text-sm flex items-center gap-2">
+
+                            <i class="fa-solid fa-list-ul"></i> Kategori Produk
+
+                        </div>
+
+                        <div class="p-3 space-y-1 font-medium text-xs text-slate-700">
+
+                            <button onclick="filterCategory('all')" class="w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 flex items-center justify-between text-brand-green font-semibold">
+
+                                <span><i class="fa-solid fa-border-all mr-2"></i>Semua Produk</span>
+
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+
+                            </button>
+
+                            <button onclick="filterCategory('putra')" class="w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 flex items-center gap-3">
+
+                                <i class="fa-solid fa-mars text-blue-500"></i> Seragam Putra
+
+                            </button>
+
+                            <button onclick="filterCategory('putri')" class="w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 flex items-center gap-3">
+
+                                <i class="fa-solid fa-venus text-pink-500"></i> Seragam Putri
+
+                            </button>
+
+                            <button onclick="filterCategory('atribut')" class="w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 flex items-center gap-3">
+
+                                <i class="fa-solid fa-tags text-amber-500"></i> Atribut & Aksesoris
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Contact Card Box -->
+
+                    <div id="contactSection" class="bg-white rounded-xl p-5 shadow-sm border border-slate-100 space-y-3">
+
+                        <h4 class="font-bold text-slate-900 text-xs flex items-center gap-2">
+
+                            <i class="fa-brands fa-whatsapp text-green-600 text-base"></i> Layanan Koperasi:
+
+                        </h4>
+
+                        <div class="text-xs text-slate-600 space-y-1.5 font-mono">
+
+                            <p class="hover:text-brand-green cursor-pointer"><i class="fa-solid fa-phone text-slate-400 mr-2"></i>0896-5508-7435</p>
+
+                            <p class="hover:text-brand-green cursor-pointer"><i class="fa-solid fa-phone text-slate-400 mr-2"></i>0852-2279-8375</p>
+
+                            <p class="text-[10px] text-slate-400 font-sans mt-2">(Senin - Jumat, Jam Ops Sekolah)</p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- Products Grid Column -->
+
+                <div class="md:col-span-3 space-y-4">
+
+                    <div class="flex items-center justify-between">
+
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">Produk Unggulan Siswa</h3>
+
+                        <button onclick="navigateTo('catalog')" class="text-xs sm:text-sm font-semibold text-brand-green hover:underline flex items-center gap-1">
+
+                            Lihat Semua <i class="fa-solid fa-arrow-right text-[10px]"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Featured Products 4-Grid -->
+
+                    <div id="homeProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                        <!-- Dynamic rendered by JS -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CATALOG PAGE VIEW -->
+
+        <section id="page-catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 hidden">
+
+            <!-- Catalog Banner -->
+
+            <div class="bg-brand-green text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-md">
+
+                <div class="relative z-10">
+
+                    <h2 class="text-2xl sm:text-3xl font-extrabold">Katalog Seragam & Atribut Sekolah</h2>
+
+                    <p class="text-xs sm:text-sm text-emerald-100 mt-1">SMK Muthia Harapan Cicalengka Bandung</p>
+
+                </div>
+
+                <div class="absolute right-4 bottom-0 opacity-10 text-8xl font-black">
+
+                    <i class="fa-solid fa-store"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Main Catalog Content -->
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Sidebar Category Filter -->
+
+                <aside class="space-y-6">
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+
+                        <div class="bg-brand-green text-white px-5 py-3 font-bold text-sm flex items-center gap-2">
+
+                            <i class="fa-solid fa-filter"></i> Filter Kategori
+
+                        </div>
+
+                        <div class="p-3 space-y-1 font-medium text-xs">
+
+                            <button onclick="filterCategory('all')" id="cat-btn-all" class="cat-filter-btn active w-full text-left px-4 py-2.5 rounded-lg bg-emerald-50 text-brand-green font-semibold flex items-center gap-3">
+
+                                <i class="fa-solid fa-border-all"></i> Semua Produk
+
+                            </button>
+
+                            <button onclick="filterCategory('putra')" id="cat-btn-putra" class="cat-filter-btn w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-3">
+
+                                <i class="fa-solid fa-mars text-blue-500"></i> Seragam Putra
+
+                            </button>
+
+                            <button onclick="filterCategory('putri')" id="cat-btn-putri" class="cat-filter-btn w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-3">
+
+                                <i class="fa-solid fa-venus text-pink-500"></i> Seragam Putri
+
+                            </button>
+
+                            <button onclick="filterCategory('atribut')" id="cat-btn-atribut" class="cat-filter-btn w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-3">
+
+                                <i class="fa-solid fa-tags text-amber-500"></i> Atribut & Aksesoris
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- Catalog Grid & Controls -->
+
+                <div class="md:col-span-3 space-y-6">
+
+                    <!-- Top Bar: Title & Sort Filter -->
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+
+                        <h3 id="catalogTitle" class="text-lg font-bold text-slate-900">Semua Produk</h3>
+
+                        <div class="flex items-center gap-2 text-xs font-semibold">
+
+                            <span class="text-slate-500">Urutkan:</span>
+
+                            <select onchange="sortProducts(this.value)" class="bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-brand-green">
+
+                                <option value="terbaru">Terbaru</option>
+
+                                <option value="termurah">Harga: Terendah ke Tinggi</option>
+
+                                <option value="termahal">Harga: Tinggi ke Terendah</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Products Grid -->
+
+                    <div id="catalogProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                        <!-- Dynamic content by JS -->
+
+                    </div>
+
+
+
+                    <!-- Pagination -->
+
+                    <div id="paginationContainer" class="flex justify-center items-center gap-2 pt-4">
+
+                        <!-- Dynamic pagination buttons -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- LOGIN MODAL -->
+
+    <div id="loginModal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity" onclick="closeLoginModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+
+
+            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full">
+
+                <div class="bg-brand-green text-white p-6 text-center space-y-2 relative">
+
+                    <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-white/80 hover:text-white">
+
+                        <i class="fa-solid fa-xmark text-xl"></i>
+
+                    </button>
+
+                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto text-yellow-400 text-2xl border border-white/20">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-black">Portal Akun Siswa</h3>
+
+                    <p class="text-xs text-emerald-100 font-medium">SMK Muthia Harapan Cicalengka</p>
+
+                </div>
+
+
+
+                <form onsubmit="handleLoginSubmit(event)" class="p-6 space-y-4">
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Siswa *</label>
+
+                        <input type="text" id="loginNama" required placeholder="Contoh: Andi Pratama" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kelas & Jurusan *</label>
+
+                        <input type="text" id="loginKelas" required placeholder="Contoh: X RPL 1 / XI Otomotif 2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">No. WhatsApp Active *</label>
+
+                        <input type="tel" id="loginWA" required placeholder="Contoh: 089655087435" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+
+
+                    <button type="submit" class="w-full py-3 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl shadow-md transition-all text-xs">
+
+                        SIMPAN & AKTIFKAN PROFIL SISWA
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PRODUCT DETAIL MODAL -->
+
+    <div id="detailModal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity" onclick="closeDetailModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+
+
+            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+
+                <div class="bg-white p-6 space-y-4 relative">
+
+                    <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+
+                        <i class="fa-solid fa-xmark text-xl"></i>
+
+                    </button>
+
+
+
+                    <div id="detailModalContent">
+
+                        <!-- Dynamically filled by JS -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CART DRAWER / MODAL -->
+
+    <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
+
+        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" onclick="toggleCartModal()"></div>
+
+
+
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+
+            <div class="pointer-events-auto w-screen max-w-md bg-white shadow-2xl flex flex-col">
+
+                <div class="flex items-center justify-between px-6 py-4 bg-brand-green text-white">
+
+                    <h2 class="text-base font-bold flex items-center gap-2">
+
+                        <i class="fa-solid fa-bag-shopping text-yellow-400"></i> Keranjang Belanja Siswa
+
+                    </h2>
+
+                    <button onclick="toggleCartModal()" class="text-white hover:text-slate-200">
+
+                        <i class="fa-solid fa-xmark text-xl"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Cart Items List -->
+
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+
+                    <!-- Dynamic rendering -->
+
+                </div>
+
+
+
+                <!-- Footer Summary -->
+
+                <div class="border-t border-slate-100 p-6 bg-slate-50 space-y-4">
+
+                    <div class="flex items-center justify-between text-base font-bold text-slate-900">
+
+                        <span>Total Pembayaran:</span>
+
+                        <span id="cartTotalPrice" class="text-brand-green text-lg font-black">Rp 0</span>
+
+                    </div>
+
+                    <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl shadow-md transition-all text-xs flex items-center justify-center gap-2">
+
+                        <span>Lanjut ke Checkout</span>
+
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CHECKOUT FORM MODAL -->
+
+    <div id="checkoutModal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity" onclick="closeCheckoutModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+
+
+            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full">
+
+                <div class="bg-brand-green text-white p-5 flex justify-between items-center">
+
+                    <h3 class="font-bold text-base flex items-center gap-2">
+
+                        <i class="fa-solid fa-file-invoice text-yellow-400"></i> Formulir Pemesanan Koperasi
+
+                    </h3>
+
+                    <button onclick="closeCheckoutModal()" class="text-white hover:text-slate-200"><i class="fa-solid fa-xmark text-xl"></i></button>
+
+                </div>
+
+
+
+                <form onsubmit="processCheckout(event)" class="p-6 space-y-4">
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Siswa *</label>
+
+                        <input type="text" id="orderNama" required placeholder="Contoh: Ahmad Fauzi" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kelas & Jurusan *</label>
+
+                        <input type="text" id="orderKelas" required placeholder="Contoh: X RPL 1 / XI Otomotif 2" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">No. WhatsApp (Aktif) *</label>
+
+                        <input type="tel" id="orderWA" required placeholder="Contoh: 089655087435" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Metode Pembayaran</label>
+
+                        <select id="orderPayment" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-green text-sm bg-slate-50">
+
+                            <option value="Tunai di Koperasi">Tunai Saat Pengambilan di Koperasi</option>
+
+                            <option value="Transfer QRIS Koperasi">Transfer QRIS / Bank Koperasi</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-xl text-xs space-y-1">
+
+                        <div class="flex justify-between text-slate-600">
+
+                            <span>Total Jumlah Item:</span>
+
+                            <span id="checkoutTotalQty" class="font-bold">0 pcs</span>
+
+                        </div>
+
+                        <div class="flex justify-between text-slate-900 font-bold text-sm">
+
+                            <span>Total Tagihan:</span>
+
+                            <span id="checkoutTotalPrice" class="text-brand-green">Rp 0</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button type="submit" class="w-full py-3 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl shadow-md transition-all text-xs flex items-center justify-center gap-2">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        <span>Konfirmasi & Buat Struk</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ORDER RECEIPT / NOTA DIGITAL MODAL -->
+
+    <div id="receiptModal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeReceiptModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+
+
+            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full">
+
+                <!-- Printable Receipt Content -->
+
+                <div id="printableReceipt" class="p-6 space-y-4 bg-white text-slate-900">
+
+                    <!-- Header Struk dengan Logo Resmi -->
+
+                    <div class="text-center space-y-2 border-b-2 border-slate-200 pb-4">
+
+                        <div class="w-16 h-16 mx-auto">
+
+                            <!-- SVG Logo Sekolah -->
+
+                            <svg viewBox="0 0 200 200" class="w-full h-full">
+
+                                <path d="M100 10 C 120 10, 130 25, 145 20 C 160 15, 170 30, 180 40 C 190 50, 180 70, 190 85 C 200 100, 185 115, 190 130 C 195 145, 175 160, 170 175 C 165 190, 140 185, 130 195 C 120 205, 100 190, 100 190 C 100 190, 80 205, 70 195 C 60 185, 35 190, 30 175 C 25 160, 5 145, 10 130 C 15 115, 0 100, 10 85 C 20 70, 10 50, 20 40 C 30 30, 40 15, 55 20 C 70 25, 80 10, 100 10 Z" fill="#FACC15" stroke="#1E293B" stroke-width="4"/>
+
+                                <circle cx="100" cy="100" r="72" fill="#FEF08A" stroke="#1E293B" stroke-width="2"/>
+
+                                <circle cx="100" cy="100" r="54" fill="#E0F2FE" stroke="#1E293B" stroke-width="2"/>
+
+                                <g fill="#1E293B">
+
+                                    <path d="M 100,100 L 100,46 A 54,54 0 0,0 100,154 Z"/>
+
+                                </g>
+
+                                <g transform="translate(100, 100) scale(0.85)">
+
+                                    <path d="M -25,-5 C -20,-25 -5,-35 0,-15 C 5,-35 20,-25 25,-5 C 15,15 0,25 0,25 C 0,25 -15,15 -25,-5 Z" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+
+                                    <path d="M -6,5 L 0,35 L 6,5 Z" fill="#1E293B"/>
+
+                                    <path d="M 0,-18 C -6,-28 0,-38 0,-38 C 0,-38 6,-28 0,-18 Z" fill="#EF4444"/>
+
+                                </g>
+
+                            </svg>
+
+                        </div>
+
+                        <h4 class="font-black text-sm uppercase tracking-tight">KOPERASI SEKOLAH</h4>
+
+                        <h5 class="font-extrabold text-xs text-brand-green">SMK MUTHIA HARAPAN CICALENGKA</h5>
+
+                        <p class="text-[10px] text-slate-500 font-medium">Jl. Cicalengka, Kab. Bandung, Jawa Barat</p>
+
+                    </div>
+
+
+
+                    <!-- Dynamic Body Struk -->
+
+                    <div id="receiptContent" class="space-y-3 text-xs">
+
+                        <!-- Filled by JS -->
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Receipt Actions -->
+
+                <div class="p-4 bg-slate-50 border-t border-slate-100 flex gap-3 no-print">
+
+                    <button onclick="window.print()" class="w-1/2 py-2.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2">
+
+                        <i class="fa-solid fa-print"></i> Cetak Struk
+
+                    </button>
+
+                    <button onclick="closeReceiptModal()" class="w-1/2 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl text-xs transition-all">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TOAST NOTIFICATION -->
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300">
+
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+
+        <span id="toastMsg" class="text-xs font-semibold">Produk berhasil ditambahkan!</span>
+
+    </div>
+
+
+
+    <script>
+
+        // Database Mock for Koperasi Sekolah Products
+
+        const productsData = [
+
+            { id: 1, name: "Kemeja SMK MUTHIA HARAPAN Pendek", price: 140000, category: "putra", rating: 4.9, icon: "fa-shirt", image: "kemejacwo.jpg.jpeg", color: "bg-emerald-50", sizes: ["S", "M", "L", "XL", "XXL"], stock: 45, desc: "Kemeja osis/harian lengan pendek resmi SMK Muthia Harapan. Bahan katun besway halus, adem, dan durable." },
+
+            { id: 2, name: "Kemeja SMK MUTHIA HARAPAN Panjang", price: 160000, category: "putra", rating: 4.9, icon: "fa-shirt", image: "5.jpg.jpeg", color: "bg-slate-50", sizes: ["S", "M", "L", "XL", "XXL"], stock: 30, desc: "Kemeja lengan panjang resmi sekolah. Jahitan rapi, bahan kuat, sangat nyaman untuk kegiatan indoor maupun outdoor." },
+
+            { id: 3, name: "Rok Abu-abu Panjang Pleat Tengah", price: 135000, category: "putri", rating: 4.8, icon: "fa-person-dress", image: "123456.jpeg", color: "bg-emerald-50", sizes: ["S", "M", "L", "XL"], stock: 25, desc: "Rok abu-abu standar siswi lipat depan. Dilengkapi saku samping dan karet pinggang lentur." },
+
+            { id: 4, name: "Celana Abu-abu Putra", price: 155000, category: "putra", rating: 4.8, icon: "fa-user-tie", image: "1234567.jpeg", color: "bg-slate-100", sizes: ["27", "28", "29", "30", "31", "32"], stock: 40, desc: "Celana abu-abu bahan kualis premium, potong standar sekolah, kain tebal dan durable." },
+
+            { id: 5, name: "Seragam Praktik Biru RPL & Otomotif", price: 145000, category: "putra", rating: 5.0, icon: "fa-vest-patches", image: "1.jfif", color: "bg-blue-50", sizes: ["S", "M", "L", "XL", "XXL"], stock: 50, desc: "Wearpack/baju praktek resmi kejuruan SMK Muthia Harapan Cicalengka. Bahan kemeja drill super kokoh." },
+
+            { id: 6, name: "Setelan Olahraga SMK", price: 195000, category: "atribut", rating: 5.0, icon: "fa-person-running", image: "olga.jpg.jpeg", color: "bg-emerald-100", sizes: ["M", "L", "XL", "XXL"], stock: 35, desc: "Kaos dan celana training olahraga lengkap dengan logo dan tulisan SMK Muthia Harapan Cicalengka." },
+
+            { id: 7, name: "Setelan Batik Siswa", price: 180000, category: "atribut", rating: 4.9, icon: "fa-shirt", image: "batikcwe.jpg.jpeg", color: "bg-amber-50", sizes: ["S", "M", "L", "XL"], stock: 28, desc: "Baju batik identitas sekolah bahan halus dan adem." },
+
+            { id: 8, name: "Jas Almamater Abu", price: 210000, category: "atribut", rating: 4.9, icon: "fa-user-graduate", image: "almet.jpg.jpeg", color: "bg-slate-200", sizes: ["S", "M", "L", "XL"], stock: 20, desc: "Jas almamater resmi SMK Muthia Harapan lengkap dengan puring dalam & bordir badge sekolah." },
+
+            { id: 9, name: "Topi & Dasi Sekolah", price: 75000, category: "atribut", rating: 4.8, icon: "fa-hat-cowboy", image: "9.jpg.jpeg", color: "bg-yellow-50", sizes: ["All Size"], stock: 100, desc: "Paket atribut upacara: Topi abu-putih logo bordir & Dasi sekolah resmi." }
+
+        ];
+
+
+
+        // Global State Management
+
+        let cart = [];
+
+        let currentPage = 1;
+
+        let activeCategory = 'all';
+
+        let searchQuery = '';
+
+        let currentSort = 'terbaru';
+
+        let selectedProductForDetail = null;
+
+        let selectedSize = '';
+
+        let userProfile = null;
+
+
+
+        // Format Rupiah Helper
+
+        function formatRp(number) {
+
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+
+        }
+
+
+
+        // Render Product Card HTML Template
+
+        function renderProductCard(p) {
+
+            const catBadge = p.category === 'putra' ? 'Putra' : p.category === 'putri' ? 'Putri' : 'Atribut';
+
+            const badgeColor = p.category === 'putra' ? 'bg-blue-100 text-blue-800' : p.category === 'putri' ? 'bg-pink-100 text-pink-800' : 'bg-amber-100 text-amber-800';
+
+
+
+            return `
+
+                <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all p-4 flex flex-col justify-between group">
+
+                    <div>
+
+                        <!-- Thumbnail Frame -->
+
+                        <div onclick="openDetailModal(${p.id})" class="w-full h-44 ${p.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-[1.02] transition-transform relative overflow-hidden cursor-pointer">
+
+                            <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e2e8f0/1e6b37?text=Foto+Produk';" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+
+                            <span class="absolute top-2 left-2 ${badgeColor} px-2 py-0.5 rounded text-[10px] font-bold">
+
+                                ${catBadge}
+
+                            </span>
+
+                            <span class="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-bold text-slate-700 shadow-sm">
+
+                                ⭐ ${p.rating}
+
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Title & Price -->
+
+                        <h4 onclick="openDetailModal(${p.id})" class="font-bold text-xs sm:text-sm text-slate-800 line-clamp-2 min-h-[36px] leading-snug cursor-pointer hover:text-brand-green">${p.name}</h4>
+
+                        <div class="mt-2 flex items-baseline justify-between">
+
+                            <span class="text-brand-green font-extrabold text-sm sm:text-base">${formatRp(p.price)}</span>
+
+                            <span class="text-[10px] text-slate-400 font-medium">Stok: ${p.stock}</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Buttons Actions -->
+
+                    <div class="mt-4 space-y-2">
+
+                        <div class="grid grid-cols-2 gap-2">
+
+                            <button onclick="openDetailModal(${p.id})" class="py-2 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-lg text-xs transition-colors">
+
+                                Detail
+
+                            </button>
+
+                            <button onclick="addToCart(${p.id})" class="py-2 px-2 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1 transition-colors shadow-sm">
+
+                                <i class="fa-solid fa-cart-plus"></i> +Keranjang
+
+                            </button>
+
+                        </div>
+
+                        <button onclick="quickCheckout(${p.id})" class="w-full py-2 px-3 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold rounded-lg text-xs flex items-center justify-center gap-1 transition-colors">
+
+                            <span>Beli Langsung</span> <i class="fa-solid fa-bolt text-[10px]"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        // Render Homepage Products Grid
+
+        function renderHomeProducts() {
+
+            const container = document.getElementById('homeProductsGrid');
+
+            const featured = productsData.slice(0, 4);
+
+            container.innerHTML = featured.map(renderProductCard).join('');
+
+        }
+
+
+
+        // Filter and Render Catalog Page
+
+        function renderCatalogProducts() {
+
+            const container = document.getElementById('catalogProductsGrid');
+
+            let filtered = productsData.filter(p => {
+
+                const matchCat = activeCategory === 'all' || p.category === activeCategory;
+
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+                return matchCat && matchSearch;
+
+            });
+
+
+
+            // Sorting
+
+            if (currentSort === 'termurah') {
+
+                filtered.sort((a, b) => a.price - b.price);
+
+            } else if (currentSort === 'termahal') {
+
+                filtered.sort((a, b) => b.price - a.price);
+
+            }
+
+
+
+            // Pagination (8 items per page)
+
+            const pageSize = 8;
+
+            const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+
+            const startIdx = (currentPage - 1) * pageSize;
+
+            const paginated = filtered.slice(startIdx, startIdx + pageSize);
+
+
+
+            if (paginated.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="col-span-full py-12 text-center text-slate-400">
+
+                        <i class="fa-solid fa-box-open text-4xl mb-2"></i>
+
+                        <p class="font-semibold text-sm">Produk seragam atau atribut tidak ditemukan.</p>
+
+                    </div>
+
+                `;
+
+            } else {
+
+                container.innerHTML = paginated.map(renderProductCard).join('');
+
+            }
+
+
+
+            // Render Pagination Buttons
+
+            const pagContainer = document.getElementById('paginationContainer');
+
+            let pagBtnsHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+
+                const isActive = i === currentPage;
+
+                pagBtnsHTML += `
+
+                    <button onclick="changePage(${i})" class="w-8 h-8 rounded-lg font-bold text-xs ${isActive ? 'bg-brand-green text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'}">${i}</button>
+
+                `;
+
+            }
+
+            pagContainer.innerHTML = pagBtnsHTML;
+
+        }
+
+
+
+        // Navigation Controller
+
+        function navigateTo(pageId) {
+
+            document.getElementById('page-home').classList.add('hidden');
+
+            document.getElementById('page-catalog').classList.add('hidden');
+
+
+
+            document.getElementById('nav-home').className = 'transition-colors hover:text-brand-green py-2 border-b-2 border-transparent';
+
+            document.getElementById('nav-catalog').className = 'transition-colors hover:text-brand-green py-2 border-b-2 border-transparent';
+
+
+
+            if (pageId === 'home') {
+
+                document.getElementById('page-home').classList.remove('hidden');
+
+                document.getElementById('nav-home').className = 'transition-colors hover:text-brand-green py-2 border-b-2 border-brand-green text-brand-green';
+
+            } else if (pageId === 'catalog') {
+
+                document.getElementById('page-catalog').classList.remove('hidden');
+
+                document.getElementById('nav-catalog').className = 'transition-colors hover:text-brand-green py-2 border-b-2 border-brand-green text-brand-green';
+
+                renderCatalogProducts();
+
+            }
+
+
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        }
+
+
+
+        // Product Detail Modal Logic
+
+        function openDetailModal(productId) {
+
+            const product = productsData.find(p => p.id === productId);
+
+            if (!product) return;
+
+            selectedProductForDetail = product;
+
+            selectedSize = product.sizes[0] || '';
+
+
+
+            const content = document.getElementById('detailModalContent');
+
+            content.innerHTML = `
+
+                <div class="w-full h-56 ${product.color} rounded-xl overflow-hidden mb-4">
+
+                    <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='https://placehold.co/800x500/e2e8f0/1e6b37?text=Foto+Produk';" class="w-full h-full object-cover rounded-xl">
+
+                </div>
+
+                <h3 class="text-base font-black text-slate-900">${product.name}</h3>
+
+                <div class="flex items-center gap-3 my-2">
+
+                    <span class="text-lg font-extrabold text-brand-green">${formatRp(product.price)}</span>
+
+                    <span class="text-xs font-semibold bg-emerald-50 text-brand-green px-2.5 py-1 rounded-full">Stok: ${product.stock} pcs</span>
+
+                </div>
+
+                <p class="text-xs text-slate-600 leading-relaxed">${product.desc}</p>
+
+
+
+                <div class="mt-4">
+
+                    <label class="block text-xs font-bold text-slate-700 mb-2">Pilih Ukuran Pakaian:</label>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        ${product.sizes.map((sz, idx) => `
+
+                            <button onclick="selectSize('${sz}', this)" class="size-btn border ${idx === 0 ? 'border-brand-green bg-brand-green text-white' : 'border-slate-200 text-slate-700'} px-3 py-1.5 rounded-lg text-xs font-bold transition-all">
+
+                                ${sz}
+
+                            </button>
+
+                        `).join('')}
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="pt-4 flex gap-3">
+
+                    <button onclick="addSelectedDetailToCart()" class="w-1/2 py-3 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs transition-colors shadow-md flex items-center justify-center gap-2">
+
+                        <i class="fa-solid fa-cart-plus"></i> + Tambah Keranjang
+
+                    </button>
+
+                    <button onclick="quickCheckoutDetail()" class="w-1/2 py-3 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold rounded-xl text-xs transition-colors shadow-md">
+
+                        Beli Langsung
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+
+            document.getElementById('detailModal').classList.remove('hidden');
+
+        }
+
+
+
+        function selectSize(size, el) {
+
+            selectedSize = size;
+
+            document.querySelectorAll('.size-btn').forEach(b => {
+
+                b.className = 'size-btn border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-xs font-bold transition-all';
+
+            });
+
+            el.className = 'size-btn border border-brand-green bg-brand-green text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all';
+
+        }
+
+
+
+        function closeDetailModal() {
+
+            document.getElementById('detailModal').classList.add('hidden');
+
+        }
+
+
+
+        function addSelectedDetailToCart() {
+
+            if (!selectedProductForDetail) return;
+
+            addToCart(selectedProductForDetail.id, selectedSize);
+
+            closeDetailModal();
+
+        }
+
+
+
+        function quickCheckoutDetail() {
+
+            if (!selectedProductForDetail) return;
+
+            addToCart(selectedProductForDetail.id, selectedSize);
+
+            closeDetailModal();
+
+            openCheckoutModal();
+
+        }
+
+
+
+        // Filter Category Function
+
+        function filterCategory(cat) {
+
+            activeCategory = cat;
+
+            currentPage = 1;
+
+
+
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+
+                btn.className = 'cat-filter-btn w-full text-left px-4 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-3';
+
+            });
+
+            const activeBtn = document.getElementById(`cat-btn-${cat}`);
+
+            if (activeBtn) {
+
+                activeBtn.className = 'cat-filter-btn w-full text-left px-4 py-2.5 rounded-lg bg-emerald-50 text-brand-green font-semibold flex items-center gap-3';
+
+            }
+
+
+
+            navigateTo('catalog');
+
+        }
+
+
+
+        function handleSearch(val) {
+
+            searchQuery = val;
+
+            currentPage = 1;
+
+            if (document.getElementById('page-catalog').classList.contains('hidden')) {
+
+                navigateTo('catalog');
+
+            } else {
+
+                renderCatalogProducts();
+
+            }
+
+        }
+
+
+
+        function sortProducts(val) {
+
+            currentSort = val;
+
+            renderCatalogProducts();
+
+        }
+
+
+
+        function changePage(page) {
+
+            currentPage = page;
+
+            renderCatalogProducts();
+
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+
+        }
+
+
+
+        function scrollToContact() {
+
+            if (document.getElementById('page-home').classList.contains('hidden')) {
+
+                navigateTo('home');
+
+            }
+
+            document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
+
+        }
+
+
+
+        // User Login Modal Logic
+
+        function openLoginModal() {
+
+            document.getElementById('loginModal').classList.remove('hidden');
+
+        }
+
+
+
+        function closeLoginModal() {
+
+            document.getElementById('loginModal').classList.add('hidden');
+
+        }
+
+
+
+        function handleLoginSubmit(e) {
+
+            e.preventDefault();
+
+            const nama = document.getElementById('loginNama').value;
+
+            const kelas = document.getElementById('loginKelas').value;
+
+            const wa = document.getElementById('loginWA').value;
+
+
+
+            userProfile = { nama, kelas, wa };
+
+
+
+            // Fill Checkout Fields Automatically
+
+            document.getElementById('orderNama').value = nama;
+
+            document.getElementById('orderKelas').value = kelas;
+
+            document.getElementById('orderWA').value = wa;
+
+
+
+            document.getElementById('loginText').innerText = nama;
+
+            closeLoginModal();
+
+            showToast(`Profil siswa atas nama "${nama}" berhasil diaktifkan!`);
+
+        }
+
+
+
+        // Cart & Checkout Logic
+
+        function addToCart(productId, size = '') {
+
+            const product = productsData.find(p => p.id === productId);
+
+            const chosenSize = size || product.sizes[0] || 'Standard';
+
+            const cartKey = `${productId}-${chosenSize}`;
+
+            const exist = cart.find(item => item.cartKey === cartKey);
+
+
+
+            if (exist) {
+
+                exist.qty += 1;
+
+            } else {
+
+                cart.push({ ...product, qty: 1, chosenSize: chosenSize, cartKey: cartKey });
+
+            }
+
+
+
+            updateCartUI();
+
+            showToast(`"${product.name}" (${chosenSize}) ditambahkan!`);
+
+        }
+
+
+
+        function quickCheckout(productId) {
+
+            addToCart(productId);
+
+            openCheckoutModal();
+
+        }
+
+
+
+        function updateCartQty(cartKey, delta) {
+
+            const item = cart.find(i => i.cartKey === cartKey);
+
+            if (!item) return;
+
+
+
+            item.qty += delta;
+
+            if (item.qty <= 0) {
+
+                cart = cart.filter(i => i.cartKey !== cartKey);
+
+            }
+
+
+
+            updateCartUI();
+
+        }
+
+
+
+        function updateCartUI() {
+
+            const badge = document.getElementById('cartBadge');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+
+
+            if (totalItems > 0) {
+
+                badge.innerText = totalItems;
+
+                badge.classList.remove('hidden');
+
+            } else {
+
+                badge.classList.add('hidden');
+
+            }
+
+
+
+            const container = document.getElementById('cartItemsContainer');
+
+            const totalContainer = document.getElementById('cartTotalPrice');
+
+
+
+            if (cart.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="text-center py-12 text-slate-400 space-y-2">
+
+                        <i class="fa-solid fa-cart-arrow-down text-5xl"></i>
+
+                        <p class="font-bold text-slate-700 text-sm">Keranjang Anda kosong</p>
+
+                        <p class="text-xs">Silakan pilih produk seragam sekolah yang Anda butuhkan.</p>
+
+                    </div>
+
+                `;
+
+                totalContainer.innerText = formatRp(0);
+
+                return;
+
+            }
+
+
+
+            let grandTotal = 0;
+
+            container.innerHTML = cart.map(item => {
+
+                const subtotal = item.price * item.qty;
+
+                grandTotal += subtotal;
+
+                return `
+
+                    <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+
+                        <div class="w-12 h-12 ${item.color} rounded-lg flex items-center justify-center text-brand-green text-xl flex-shrink-0">
+
+                            <i class="fa-solid ${item.icon}"></i>
+
+                        </div>
+
+                        <div class="flex-1 min-w-0">
+
+                            <h5 class="font-bold text-xs text-slate-900 truncate">${item.name}</h5>
+
+                            <p class="text-[10px] text-slate-500 font-semibold">Ukuran: ${item.chosenSize}</p>
+
+                            <p class="text-xs text-brand-green font-bold mt-0.5">${formatRp(item.price)}</p>
+
+                        </div>
+
+                        <div class="flex items-center gap-2 bg-white px-2 py-1 rounded-lg border border-slate-200">
+
+                            <button onclick="updateCartQty('${item.cartKey}', -1)" class="text-slate-500 hover:text-slate-800 text-xs font-bold px-1">-</button>
+
+                            <span class="text-xs font-bold text-slate-800 w-4 text-center">${item.qty}</span>
+
+                            <button onclick="updateCartQty('${item.cartKey}', 1)" class="text-slate-500 hover:text-slate-800 text-xs font-bold px-1">+</button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }).join('');
+
+
+
+            totalContainer.innerText = formatRp(grandTotal);
+
+        }
+
+
+
+        function toggleCartModal() {
+
+            document.getElementById('cartModal').classList.toggle('hidden');
+
+        }
+
+
+
+        function openCheckoutModal() {
+
+            if (cart.length === 0) {
+
+                showToast('Keranjang belanja Anda masih kosong!');
+
+                return;
+
+            }
+
+            document.getElementById('cartModal').classList.add('hidden');
+
+
+
+            const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+
+            const totalPrice = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+
+
+
+            document.getElementById('checkoutTotalQty').innerText = `${totalQty} pcs`;
+
+            document.getElementById('checkoutTotalPrice').innerText = formatRp(totalPrice);
+
+            document.getElementById('checkoutModal').classList.remove('hidden');
+
+        }
+
+
+
+        function closeCheckoutModal() {
+
+            document.getElementById('checkoutModal').classList.add('hidden');
+
+        }
+
+
+
+        function processCheckout(e) {
+
+            e.preventDefault();
+
+            const nama = document.getElementById('orderNama').value;
+
+            const kelas = document.getElementById('orderKelas').value;
+
+            const wa = document.getElementById('orderWA').value;
+
+            const payment = document.getElementById('orderPayment').value;
+
+            const totalPrice = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+
+            const orderNo = 'KOP-' + Math.floor(100000 + Math.random() * 900000);
+
+            const today = new Date().toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+
+
+            const receiptHtml = `
+
+                <div class="border-b border-slate-200 pb-3 space-y-1">
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">No. Transaksi:</span>
+
+                        <span class="font-mono font-bold text-slate-900">${orderNo}</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">Waktu Pembelian:</span>
+
+                        <span class="font-semibold text-slate-800">${today}</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">Nama Siswa:</span>
+
+                        <span class="font-semibold text-slate-800">${nama}</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">Kelas / Jurusan:</span>
+
+                        <span class="font-semibold text-slate-800">${kelas}</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">No. WhatsApp:</span>
+
+                        <span class="font-semibold text-slate-800">${wa}</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span class="text-slate-500">Metode Bayar:</span>
+
+                        <span class="font-semibold text-slate-800">${payment}</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="space-y-2 py-2">
+
+                    <p class="font-bold text-slate-800">Rincian Barang Dipesan:</p>
+
+                    ${cart.map(i => `
+
+                        <div class="flex justify-between text-slate-700">
+
+                            <div>
+
+                                <p class="font-semibold">${i.name}</p>
+
+                                <p class="text-[10px] text-slate-400">Ukuran: ${i.chosenSize} x ${i.qty}</p>
+
+                            </div>
+
+                            <span class="font-bold">${formatRp(i.price * i.qty)}</span>
+
+                        </div>
+
+                    `).join('')}
+
+                </div>
+
+
+
+                <div class="border-t border-slate-200 pt-3 flex justify-between font-black text-sm text-slate-900">
+
+                    <span>TOTAL BAYAR:</span>
+
+                    <span class="text-brand-green">${formatRp(totalPrice)}</span>
+
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 p-2.5 rounded-lg text-[10px] text-amber-800 mt-2 text-center">
+
+                    Tunjukkan struk ini kepada petugas Koperasi Sekolah SMK Muthia Harapan Cicalengka saat verifikasi/pengambilan barang.
+
+                </div>
+
+            `;
+
+
+
+            document.getElementById('receiptContent').innerHTML = receiptHtml;
+
+            closeCheckoutModal();
+
+            document.getElementById('receiptModal').classList.remove('hidden');
+
+
+
+            // Reset Cart State
+
+            cart = [];
+
+            updateCartUI();
+
+        }
+
+
+
+        function closeReceiptModal() {
+
+            document.getElementById('receiptModal').classList.add('hidden');
+
+        }
+
+
+
+        function showToast(msg) {
+
+            const toast = document.getElementById('toast');
+
+            document.getElementById('toastMsg').innerText = msg;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+
+
+
+            setTimeout(() => {
+
+                toast.classList.add('translate-y-20', 'opacity-0');
+
+            }, 2500);
+
+        }
+
+
+
+        window.onload = function() {
+
+            renderHomeProducts();
+
+            updateCartUI();
+
+        };
+
+    </script>
+
+</body>
+
+</html>
